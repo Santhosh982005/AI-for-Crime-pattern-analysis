@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Crime Type</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; }
+        form { display: grid; gap: 15px; }
+        label { font-weight: bold; }
+        input { padding: 8px; }
+        button { padding: 10px; background-color: #4CAF50; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h1>Predict Crime Type</h1>
+    <form method="POST">
+        <div>
+            <label for="lat">Latitude:</label>
+            <input type="number" id="lat" name="lat" step="0.000001" required>
+        </div>
+        
+        <div>
+            <label for="lon">Longitude:</label>
+            <input type="number" id="lon" name="lon" step="0.000001" required>
+        </div>
+        
+        <div>
+            <label for="hour">Hour of Day (0-23):</label>
+            <input type="number" id="hour" name="hour" min="0" max="23" value="12" required>
+        </div>
+        
+        <button type="submit">Predict Crime Type</button>
+    </form>
+    
+    <p><a href="/">← Back to Dashboard</a></p>
+</body>
+</html>

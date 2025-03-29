@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime News</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; }
+        .news-header { margin-bottom: 30px; }
+        .article-card {
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .article-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .article-source {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        .article-date {
+            color: #888;
+            font-size: 0.8em;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .api-credit {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="news-header">
+        <h1>Latest Crime News</h1>
+        <p>Showing {{ articles|length }} results</p>
+    </div>
+
+    {% if articles %}
+        {% for article in articles %}
+        <div class="article-card">
+            {% if article.image %}
+            <img src="{{ article.image }}" alt="Article image" class="article-image" onerror="this.style.display='none'">
+            {% endif %}
+            <div class="article-source">{{ article.source }}</div>
+            <h3>{{ article.title }}</h3>
+            <div class="article-date">{{ article.date }}</div>
+            <p>{{ article.description }}</p>
+            <a href="{{ article.url }}" class="read-more" target="_blank" rel="noopener">Read Full Story</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No crime news articles found.</p>
+    {% endif %}
+
+    {% if show_api_credit %}
+    <div class="api-credit">
+        News data provided by <a href="https://newsapi.org/" target="_blank" rel="noopener">NewsAPI.org</a>
+    </div>
+    {% endif %}
+
+    <a href="/" style="display: inline-block; margin-top: 20px;">← Back to Dashboard</a>
+</body>
+</html>

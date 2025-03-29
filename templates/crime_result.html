@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; }
+        .result { background-color: #f5f5f5; padding: 20px; border-radius: 5px; }
+        .back-btn { display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Crime Prediction Result</h1>
+    
+    <div class="result">
+        <p><strong>Predicted Crime Type:</strong> {{ crime_type }}</p>
+        <p><strong>Location:</strong> {{ location }}</p>
+        <p><strong>Time:</strong> {{ time }}</p>
+    </div>
+    
+    <a href="/predict-crime" class="back-btn">← Make Another Prediction</a>
+    <a href="/" class="back-btn">← Back to Dashboard</a>
+</body>
+</html>

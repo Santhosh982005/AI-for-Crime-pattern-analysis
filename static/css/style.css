@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Card Styling (Glassmorphism) */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Layered Buttons */
+.btn-layered {
+    background: linear-gradient(135deg, #ff4c4c, #ff6666);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px rgba(255, 100, 100, 0.4);
+}
+
+.btn-layered:hover {
+    background: linear-gradient(135deg, #ff6666, #ff4c4c);
+    box-shadow: 5px 5px 15px rgba(255, 100, 100, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: #2b2b2b;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #ff4c4c;
+    box-shadow: 0px 0px 8px rgba(255, 76, 76, 0.7);
+    outline: none;
+}
+
+/* Crime Map */
+#crimeMap {
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Chatbox */
+#chatbox {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Analysis Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .chat-container {
+            margin: 30px 0;
+        }
+        .chat-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .response {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .examples {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crime Data Assistant</h1>
+    <p>Ask questions about crime patterns in our area</p>
+    
+    <div class="chat-container">
+        <form method="POST" class="chat-form" action="{{ url_for('chatbot') }}">
+            <input type="text" name="question" placeholder="Type your question here..." required>
+            <button type="submit">Ask</button>
+        </form>
+        
+        {% if show_result %}
+        <div class="response">
+            <div class="question">You asked: {{ question }}</div>
+            <div>{{ answer }}</div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="examples">
+        <h3>Try asking:</h3>
+        <ul>
+            <li>"What types of crimes occur at night?"</li>
+            <li>"Where are the theft hotspots?"</li>
+            <li>"What are common weekend crimes?"</li>
+            <li>"Show me recent crime trends"</li>
+        </ul>
+    </div>
+    
+    <a href="/" class="back-link">← Back to Dashboard</a>
+</body>
+</html>

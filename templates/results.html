@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .result-container { max-width: 800px; margin: 0 auto; }
+        .plot { max-width: 100%; height: auto; }
+        .map-container { width: 100%; height: 500px; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .back-btn { margin-top: 20px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>{{ prediction_type }} Results</h1>
+        
+        {% if plot_url %}
+        <h2>Prediction Plot</h2>
+        <img src="{{ plot_url }}" alt="Crime Trend Plot" class="plot">
+        {% endif %}
+        
+        {% if map_url %}
+        <h2>Hotspot Map</h2>
+        <div class="map-container">
+            <iframe src="{{ map_url }}" title="Crime Hotspots Map"></iframe>
+        </div>
+        {% endif %}
+        
+        {% if additional_data %}
+        <p>{{ additional_data }}</p>
+        {% endif %}
+        
+        <a href="/" class="back-btn">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

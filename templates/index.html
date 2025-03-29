@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Analysis Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .card { 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            padding: 20px; 
+            margin: 10px 0; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background-color: #45a049; }
+        .nav { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    
+    <div class="nav">
+        <h1>Crime Analysis Dashboard</h1>
+    </div>
+
+    <div class="card">
+        <h2>Crime Trend Prediction</h2>
+        <p>Predict future crime trends using our LSTM model</p>
+        <a href="/predict-trend" class="btn">Predict Trends</a>
+    </div>
+
+    <div class="card">
+        <h2>Crime Hotspot Detection</h2>
+        <p>Identify high-risk areas using K-Means clustering</p>
+        <a href="/predict-hotspots" class="btn">Detect Hotspots</a>
+    </div>
+
+    <div class="card">
+        <h2>Crime Type Prediction</h2>
+        <p>Predict likely crime types based on location and time</p>
+        <a href="/predict-crime" class="btn">Predict Crime Type</a>
+    </div>
+
+    <div class="card">
+        <h2>Latest Crime News</h2>
+        <p>Get the latest crime-related news articles</p>
+        <a href="/news" class="btn">View News</a>
+    </div>
+
+    <a href="/chatbot" class="btn">Ask Crime Bot</a>
+</body>
+</html>
